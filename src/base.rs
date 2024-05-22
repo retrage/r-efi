@@ -398,6 +398,26 @@ pub struct Guid {
     node: [u8; 6],
 }
 
+impl core::fmt::Display for Guid {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        write!(
+            f,
+            "{:08x}-{:04x}-{:04x}-{:02x}{:02x}-{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}",
+            u32::from_le_bytes(self.time_low),
+            u16::from_le_bytes(self.time_mid),
+            u16::from_le_bytes(self.time_hi_and_version),
+            self.clk_seq_hi_res,
+            self.clk_seq_low,
+            self.node[0],
+            self.node[1],
+            self.node[2],
+            self.node[3],
+            self.node[4],
+            self.node[5]
+        )
+    }
+}
+
 /// Network MAC Address
 ///
 /// This type encapsulates a single networking media access control address
