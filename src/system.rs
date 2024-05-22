@@ -1094,6 +1094,7 @@ pub struct BootServices {
     pub create_event_ex: BootCreateEventEx,
 }
 
+pub const SYSTEM_TABLE_REVISION_2_80: u32 = (2 << 16) | (80);
 pub const SYSTEM_TABLE_REVISION_2_70: u32 = (2 << 16) | (70);
 pub const SYSTEM_TABLE_REVISION_2_60: u32 = (2 << 16) | (60);
 pub const SYSTEM_TABLE_REVISION_2_50: u32 = (2 << 16) | (50);
